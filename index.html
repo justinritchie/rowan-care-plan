@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314110D'/><path d='M32 14 L51 31 H46 V50 H36 V39 H28 V50 H18 V31 H13 Z' fill='%23D8A44A'/></svg>">
-<title>Coming Home at One Hundred: Decision Dossier</title>
+<title>Home at 100?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
@@ -72,6 +72,10 @@
   .lead{font-size:22px; line-height:1.66; color:#F4EDE0;}
   strong{font-weight:600; color:#FBF5EA;}
   .hl{background:linear-gradient(180deg,transparent 60%,rgba(224,172,85,.26) 60%); padding:0 2px;}
+  .findings{list-style:none; margin:6px 0 0; padding:0;}
+  .findings li{position:relative; padding:13px 0 13px 28px; border-bottom:1px solid var(--line-soft); font-size:19px; line-height:1.55; color:var(--ink);}
+  .findings li:last-child{border-bottom:none;}
+  .findings li::before{content:""; position:absolute; left:3px; top:22px; width:7px; height:7px; background:var(--gold); transform:rotate(45deg);}
 
   /* ---------- scenario cards ---------- */
   .paths{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:4px;}
@@ -92,6 +96,12 @@
   /* ---------- the fork ---------- */
   .fork{background:var(--bg2); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:5px; padding:26px; box-shadow:var(--shadow);}
   .fork .q{font-family:var(--serif); font-weight:600; font-size:25px; color:#FBF5EA; line-height:1.2; margin-bottom:14px;}
+  .fork ul.forklist{list-style:none; margin:0; padding:0;}
+  .fork ul.forklist li{position:relative; padding:10px 0 10px 26px; border-top:1px solid var(--line-soft); color:var(--soft); font-size:17px; line-height:1.5;}
+  .fork ul.forklist li:first-child{border-top:none; padding-top:4px;}
+  .fork ul.forklist li::before{content:""; position:absolute; left:4px; top:18px; width:6px; height:6px; background:var(--gold); transform:rotate(45deg);}
+  .fork ul.forklist li:first-child::before{top:12px;}
+  .fork ul.forklist strong{color:var(--ink); font-weight:600;}
 
   /* ---------- timeline ---------- */
   .timeline{margin:6px 0; padding:38px 30px 26px; background:var(--bg2); border:1px solid var(--line); border-radius:6px; box-shadow:var(--shadow);}
@@ -164,8 +174,8 @@
       <span>Decision Dossier <span class="dot">/</span> Ritchie</span>
       <span>Private <span class="dot">&middot;</span> For the family</span>
     </div>
-    <h1 class="rise d1">Coming Home <span class="it">at One Hundred</span></h1>
-    <p class="dek rise d2">Should she return to her own house, stay in care, or try home and keep a fallback?</p>
+    <h1 class="rise d1">Home at <span class="it">100?</span></h1>
+    <p class="dek rise d2">What the numbers say about staying in assisted living, moving home, or trying home with a fallback.</p>
     <div class="meta rise d2">
       <span><b>Prepared</b> June 2026</span>
       <span><b>Subject</b> Grandmother Ritchie, age 100</span>
@@ -182,18 +192,24 @@
 
   <!-- 01 -->
   <section>
-    <div class="sectag rise"><span class="no">01</span><span class="label">The surprise in the numbers</span><span class="ln"></span></div>
-    <p class="lead rise d1">Open the model cold and the first surprise is how little the money separates the choices. <span class="hl">In every realistic version of events, the house is sold within roughly 16&ndash;18 months to keep paying for her care.</span> Across three years, the three paths land within about $10,000 of one another.</p>
-    <p class="rise d2 soft">So the decision is not really about money. It is about whether she can be kept safe at home, what the family can carry, and what she wants. <strong>One variable moves everything else: the insulin.</strong></p>
+    <div class="sectag rise"><span class="no">01</span><span class="label">The findings</span><span class="ln"></span></div>
+    <ul class="findings rise d1">
+      <li>Three scenarios map out the possibilities: stay where she is, move home, or return to assisted living after trying home.</li>
+      <li>Over three years, the three scenarios come out similar in cost, within about $10,000 of each other.</li>
+      <li>Whichever scenario, her roughly $90,000 cushion runs dry around Nov 2027 &ndash; Feb 2028, and selling the house looks like the only way to keep paying for care after that.</li>
+      <li>If assisted-living costs rise about 5% a year while the house does not, time may favor moving home.</li>
+      <li>Depending on the care she needs at home, moving home ranges from cost-competitive with assisted living to the cheapest of the three by far.</li>
+      <li>The major factor is the home care plan: how much help she needs, what it costs, and whether it can be reliably staffed without falling back on family to cover gaps when staff miss appointments.</li>
+    </ul>
   </section>
 
   <!-- 02 -->
   <section>
-    <div class="sectag rise"><span class="no">02</span><span class="label">Three paths, priced</span><span class="ln"></span></div>
+    <div class="sectag rise"><span class="no">02</span><span class="label">Three scenarios, priced</span><span class="ln"></span></div>
     <div class="paths">
       <div class="path A rise d1">
-        <div class="tag">Path A</div>
-        <h3>Stay in care</h3>
+        <div class="tag">Scenario A</div>
+        <h3>Stay in assisted living</h3>
         <div class="big">$6,500<small> /mo &middot; Yr 1</small></div>
         <div class="stats">
           <div><span class="k">Cash runway</span><span class="v">~18 mo</span></div>
@@ -203,7 +219,7 @@
         <p class="note">Predictable, but the bill climbs about 5% a year, every year.</p>
       </div>
       <div class="path B rise d2">
-        <div class="tag">Path B</div>
+        <div class="tag">Scenario B</div>
         <h3>Move home</h3>
         <div class="big">$5,900<small> /mo &middot; base care</small></div>
         <div class="stats">
@@ -214,7 +230,7 @@
         <p class="note">Her wish, and cost-competitive with staying once care is counted.</p>
       </div>
       <div class="path C rise d3">
-        <div class="tag">Path C</div>
+        <div class="tag">Scenario C</div>
         <h3>Home, then back</h3>
         <div class="big">~$24k<small> /one-time, if it fails</small></div>
         <div class="stats">
@@ -222,7 +238,7 @@
           <div><span class="k">Left if sold</span><span class="v">~$140k</span></div>
           <div><span class="k">Posture</span><span class="v">hedged</span></div>
         </div>
-        <p class="note">Try home with a facility kept warm. Trying and failing costs surprisingly little.</p>
+        <p class="note">Try home with an assisted-living spot kept warm. Trying and failing costs surprisingly little.</p>
       </div>
     </div>
     <div class="optline rise"><b>The optimistic case.</b> If she can self-inject, home runs about $1,540 a month, under her ~$1,700 income, and the $90k cushion may never be drawn down at all.</div>
@@ -230,18 +246,23 @@
 
   <!-- 03 -->
   <section>
-    <div class="sectag rise"><span class="no">03</span><span class="label">The variable that decides it</span><span class="ln"></span></div>
+    <div class="sectag rise"><span class="no">03</span><span class="label">The real question: care at home</span><span class="ln"></span></div>
     <div class="fork rise d1">
-      <div class="q">Can she, or an unpaid family member, give the insulin twice a day?</div>
-      <p class="soft">A skilled aide who administers insulin runs about $50/hr, with agency minimums, and that single line makes home cost roughly the same as the facility. Remove the need, by her self-injecting or a family member covering it, and home becomes the cheapest path by a wide margin. Facility and care inflate about 5% a year while the house does not, so the longer she lives, the more moving home favors her.</p>
-      <p class="soft" style="margin-bottom:0"><strong>Resolve the insulin question before deciding anything else.</strong> It moves the outcome more than facility inflation, food, monitoring, and repairs combined.</p>
+      <div class="q">How much care does she need at home, what does it cost, and can it be staffed?</div>
+      <p class="soft" style="margin-bottom:8px">At home, both the cost and the safety come down to the care plan:</p>
+      <ul class="forklist">
+        <li><strong>The hours:</strong> how many a day she actually needs, and at what skill level.</li>
+        <li><strong>The staffing:</strong> whether it can be reliably covered, including backup when someone cannot show up.</li>
+        <li><strong>The insulin</strong> (the biggest swing): twice-daily injections are skilled care, not something to put on family. A paid skilled aide (about $50/hour) makes home cost about the same as assisted living; if it can be simplified or self-administered, the rest is mostly personal care (about $30/hour) and home is the cheapest of the three by far.</li>
+        <li><strong>Do this first:</strong> a concrete care plan, real hours, who provides them, what they cost, and backup coverage. Resolve it and the financial choice mostly answers itself.</li>
+      </ul>
     </div>
   </section>
 
   <!-- 04 -->
   <section>
     <div class="sectag rise"><span class="no">04</span><span class="label">When the house has to be sold</span><span class="ln"></span></div>
-    <p class="rise d1 soft">Her roughly $90,000 in liquid savings is the clock. The bar below runs from her move-in in August 2026 across the full three years. Each dot marks the month that cushion runs dry under that path, after which the house is sold to keep paying. It empties at about the same time whether she stays or moves, so selling is not a feature of one path; it is the shared turning point of nearly all of them.</p>
+    <p class="rise d1 soft">Her roughly $90,000 in liquid savings is the clock. The bar below runs from her move-in in August 2026 across the full three years. Each dot marks the month that cushion runs dry under that scenario, after which the house is sold to keep paying. It empties at about the same time whether she stays or moves, so selling is not a feature of one scenario; it is the shared turning point of nearly all of them.</p>
     <div class="timeline rise d2">
       <div class="track">
         <div class="axis"></div>
@@ -260,7 +281,7 @@
       </div>
       <div class="tl-legend">
         <span><i class="dot" style="background:var(--sage)"></i> Scenario B (Move home): cushion gone ~Nov 2027</span>
-        <span><i class="dot" style="background:var(--slate)"></i> Scenario A (Stay in facility): cushion gone ~Feb 2028</span>
+        <span><i class="dot" style="background:var(--slate)"></i> Scenario A (Stay in assisted living): cushion gone ~Feb 2028</span>
         <span><i class="dot" style="background:var(--clay)"></i> House sold to keep paying</span>
       </div>
     </div>
@@ -270,10 +291,10 @@
   <!-- 05 -->
   <section>
     <div class="sectag rise"><span class="no">05</span><span class="label">For &amp; against</span><span class="ln"></span></div>
-    <p class="rise d1 soft" style="margin-bottom:10px">The same facts weigh differently depending on what the family values most. For each path, the case for and the case against.</p>
+    <p class="rise d1 soft" style="margin-bottom:10px">The same facts weigh differently depending on what the family values most. For each scenario, the case for and the case against.</p>
 
     <div class="scen A rise d2">
-      <div class="stitle">Path A &middot; Stay in care</div>
+      <div class="stitle">Scenario A &middot; Stay in assisted living</div>
       <div class="pc">
         <div class="for"><h4>The case for</h4><ul><li>Skilled help and insulin already handled, around the clock.</li><li>No move, no repairs to manage right now.</li></ul></div>
         <div class="against"><h4>The case against</h4><ul><li>The bill inflates ~5% a year and never stops.</li><li>It is the opposite of what she has asked for.</li></ul></div>
@@ -281,7 +302,7 @@
     </div>
 
     <div class="scen B rise">
-      <div class="stitle">Path B &middot; Move home</div>
+      <div class="stitle">Scenario B &middot; Move home</div>
       <div class="pc">
         <div class="for"><h4>The case for</h4><ul><li>What she wants: her own bed, her own house.</li><li>Cost-competitive with staying; cheapest if she self-injects.</li></ul></div>
         <div class="against"><h4>The case against</h4><ul><li>Safety hinges on the insulin and on caregivers showing up.</li><li>Upfront repairs and accessibility work come first.</li></ul></div>
@@ -289,10 +310,10 @@
     </div>
 
     <div class="scen C rise">
-      <div class="stitle">Path C &middot; Home, then back</div>
+      <div class="stitle">Scenario C &middot; Home, then back</div>
       <div class="pc">
         <div class="for"><h4>The case for</h4><ul><li>Honors her wish without betting everything on it.</li><li>Trying and failing costs surprisingly little.</li></ul></div>
-        <div class="against"><h4>The case against</h4><ul><li>A second move is hard on a centenarian.</li><li>Needs a facility relationship kept warm in advance.</li></ul></div>
+        <div class="against"><h4>The case against</h4><ul><li>A second move is hard on a centenarian.</li><li>Needs an assisted-living relationship kept warm in advance.</li></ul></div>
       </div>
     </div>
   </section>
@@ -303,8 +324,8 @@
     <div class="assume rise d1">
       <div><span class="k">Liquid savings (money market)</span><span class="v">$90k @ ~2%</span></div>
       <div><span class="k">Social Security income</span><span class="v">~$1,700/mo</span></div>
-      <div><span class="k">Facility, Year 1</span><span class="v">$6,000/mo</span></div>
-      <div><span class="k">Facility / care inflation</span><span class="v">~5%/yr</span></div>
+      <div><span class="k">Assisted living, Year 1</span><span class="v">$6,000/mo</span></div>
+      <div><span class="k">Assisted living / care inflation</span><span class="v">~5%/yr</span></div>
       <div><span class="k">Skilled (insulin) aide</span><span class="v">$50/hr</span></div>
       <div><span class="k">Personal-care aide</span><span class="v">$30/hr</span></div>
       <div><span class="k">Sale-enabling repairs</span><span class="v">~$12,650</span></div>
@@ -312,7 +333,7 @@
       <div><span class="k">Home value (net)</span><span class="v">~$232k</span></div>
       <div><span class="k">Planning horizon</span><span class="v">36 months</span></div>
     </div>
-    <p class="rise soft" style="margin-top:18px; font-size:16.5px">Plumbing and roof, about $13k, are counted in every path: the house must be made sound to live in or to sell, so they do not favor a choice. Other programs (PACE, NC Medicaid, VA, and Medicare Advantage benefits) could lower costs further.</p>
+    <p class="rise soft" style="margin-top:18px; font-size:16.5px">Plumbing and roof, about $13k, are counted in every scenario: the house must be made sound to live in or to sell, so they do not favor a choice. Other programs (PACE, NC Medicaid, VA, and Medicare Advantage benefits) could lower costs further.</p>
   </section>
 
   <footer>Decision Dossier &middot; Ritchie &middot; June 2026</footer>
