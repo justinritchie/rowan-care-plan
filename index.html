@@ -101,7 +101,9 @@
   .gridlabel.l0{transform:none;} .gridlabel.l100{transform:translateX(-100%);}
   .sellband{position:absolute; top:76px; height:30px; background:rgba(168,95,41,.15); border-left:1px dashed var(--clay); border-right:1px dashed var(--clay); border-radius:2px;}
   .band-bracket{position:absolute; top:48px; height:24px; border:1.5px solid var(--clay); border-bottom:none; border-radius:5px 5px 0 0; opacity:.5;}
-  .band-label{position:absolute; top:22px; transform:translateX(-50%); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--clay-deep); font-weight:700; white-space:nowrap;}
+  .band-label{position:absolute; top:14px; transform:translateX(-50%); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--clay-deep); font-weight:700; white-space:nowrap;}
+  .band-months{position:absolute; top:33px; transform:translateX(-50%); font-size:12px; color:var(--clay-deep); font-weight:600; white-space:nowrap;}
+  .band-end{position:absolute; top:51px; transform:translateX(-50%); font-size:10.5px; font-weight:700; color:var(--clay-deep); background:#fffdf8; padding:0 4px; line-height:1; white-space:nowrap;}
   .marker{position:absolute; top:83px; width:14px; height:14px; border-radius:50%; transform:translate(-50%,0); border:3px solid #fffdf8; box-shadow:0 0 0 1px rgba(0,0,0,.08); z-index:2;}
   .marker.A{background:var(--slate);} .marker.B{background:var(--green);}
   .opt-arrow{position:absolute; top:87px; height:6px; border-radius:3px; background:linear-gradient(90deg,rgba(47,107,76,.5),rgba(47,107,76,0));}
@@ -207,8 +209,6 @@
     <div class="meta">
       <span><b>Prepared</b> June 2026</span>
       <span><b>Subject</b> Grandmother Ritchie, age 100</span>
-      <span><b>Decision by</b> her two sons</span>
-      <span><b>Source</b> companion financial model</span>
     </div>
   </header>
 
@@ -216,9 +216,9 @@
     <div class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></div>
     <div class="dl-tx">
       <div class="dl-h">The full financial model</div>
-      <div class="dl-s">Latest Excel workbook. Every scenario, assumption, and the month-by-month runway. Open it for your own review, or forward it on.</div>
+      <div class="dl-s">Opens live in Google Sheets, no download needed. Every scenario, assumption, and the month-by-month runway. Review it yourself, or forward the link on.</div>
     </div>
-    <a class="dl-btn" href="https://drive.google.com/file/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Download Excel<span class="dl-sz">.xlsx</span></a>
+    <a class="dl-btn" href="https://docs.google.com/spreadsheets/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/edit?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Open in Google Sheets</a>
   </div>
 
 
@@ -303,7 +303,10 @@
         <div class="opt-label" style="left:72%">Optimistic · funds preserved &rarr;</div>
         <!-- house-sold window: months ~15-18 => 41.6%-50% -->
         <div class="band-label" style="left:45.8%">House sold here</div>
+        <div class="band-months" style="left:45.8%">months 15&ndash;18</div>
         <div class="band-bracket" style="left:41.6%; width:8.4%;"></div>
+        <div class="band-end" style="left:41.6%">15</div>
+        <div class="band-end" style="left:50%">18</div>
         <div class="sellband" style="left:41.6%; width:8.4%;"></div>
         <!-- scenario end-points (identity in legend below) -->
         <div class="marker B" style="left:41.6%"></div>
@@ -462,7 +465,7 @@
   <footer class="reveal">
     <div class="rule"></div>
     <p><strong>About this memo.</strong> Prepared June 2026 to support a family decision. All dollar figures are planning estimates drawn from the companion financial model and should be confirmed with providers, her insurance plan, and a contractor before any commitment. This document is not financial, legal, or medical advice. The most decision-relevant unknowns (how much paid care she needs and whether she can self-administer insulin) should be resolved first, as they move the outcome more than any other factor.</p>
-    <p style="margin-top:16px"><a class="dl-foot" href="https://drive.google.com/file/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Download the Excel model (.xlsx)</a>. The source of every figure above.</p>
+    <p style="margin-top:16px"><a class="dl-foot" href="https://docs.google.com/spreadsheets/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/edit?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Open the interactive model in Google Sheets</a>. The source of every figure above.</p>
   </footer>
 
 </div>
