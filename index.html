@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Coming Home at One Hundred: A Decision Memo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e7;
+    --paper-2:#efe8d8;
+    --ink:#211f1a;
+    --ink-soft:#5f594c;
+    --ink-faint:#8a8474;
+    --line:#ded5c2;
+    --line-soft:#e8e1d1;
+    --green:#2f6b4c;     /* Home */
+    --green-deep:#234f39;
+    --slate:#3a5872;     /* Stay */
+    --slate-deep:#2b4255;
+    --clay:#a85f29;      /* Hybrid */
+    --clay-deep:#8a4d1f;
+    --gold:#9c7a2e;
+    --shadow:0 1px 2px rgba(33,31,26,.05),0 8px 28px rgba(33,31,26,.07);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Hanken Grotesk",-apple-system,sans-serif;
+    font-size:17px; line-height:1.62; font-weight:400;
+    -webkit-font-smoothing:antialiased; letter-spacing:.002em;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative; z-index:1; max-width:880px; margin:0 auto; padding:0 28px 120px;}
+
+  /* ---------- header ---------- */
+  header.mast{padding:64px 0 40px; border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:12.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--clay-deep); font-weight:600;}
+  h1{
+    font-family:"Fraunces",serif; font-weight:500; font-optical-sizing:auto;
+    font-size:clamp(40px,7vw,68px); line-height:1.02; letter-spacing:-.015em;
+    margin:.32em 0 .18em; color:var(--ink);
+  }
+  h1 em{font-style:italic; color:var(--green-deep);}
+  .dek{font-size:19px; color:var(--ink-soft); max-width:60ch; line-height:1.5;}
+  .meta{margin-top:26px; font-size:13px; color:var(--ink-faint); display:flex; gap:22px; flex-wrap:wrap; letter-spacing:.02em;}
+  .meta span{display:inline-flex; gap:7px; align-items:center;}
+  .meta b{color:var(--ink-soft); font-weight:600;}
+
+  /* ---------- sections ---------- */
+  section{padding:46px 0; border-bottom:1px solid var(--line-soft);}
+  .sec-label{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin-bottom:14px;}
+  h2{font-family:"Fraunces",serif; font-weight:500; font-size:clamp(26px,4vw,34px); line-height:1.1; letter-spacing:-.01em; margin:0 0 .5em; color:var(--ink);}
+  h3{font-family:"Hanken Grotesk",sans-serif; font-weight:700; font-size:16px; letter-spacing:.01em; margin:0 0 8px;}
+  p{margin:0 0 16px; max-width:68ch;}
+  p.lead{font-size:20px; line-height:1.5; color:var(--ink); max-width:64ch;}
+  p.lead .hl{ background:linear-gradient(180deg,transparent 58%, rgba(168,95,41,.22) 58%); padding:0 2px;}
+  strong{font-weight:700;}
+  .muted{color:var(--ink-soft);}
+
+  /* pull insight */
+  .insight{
+    margin:30px 0 6px; padding:28px 30px; background:var(--paper-2);
+    border-left:3px solid var(--green); border-radius:2px;
+    font-family:"Fraunces",serif; font-size:22px; line-height:1.42; font-weight:400; color:var(--ink);
+  }
+  .insight b{font-weight:600; color:var(--green-deep);}
+
+  /* ---------- scenario cards ---------- */
+  .cards{display:grid; grid-template-columns:1fr; gap:18px; margin-top:8px;}
+  .card{
+    background:#fffdf8; border:1px solid var(--line); border-radius:6px; overflow:hidden;
+    box-shadow:var(--shadow); position:relative;
+  }
+  .card .bar{height:5px; width:100%;}
+  .card .body{padding:22px 24px 24px;}
+  .card-A .bar{background:var(--slate);}  .card-A .tag{color:var(--slate-deep);}
+  .card-B .bar{background:var(--green);}   .card-B .tag{color:var(--green-deep);}
+  .card-C .bar{background:var(--clay);}    .card-C .tag{color:var(--clay-deep);}
+  .card .tag{font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;}
+  .card h3.name{font-family:"Fraunces",serif; font-weight:500; font-size:25px; margin:4px 0 4px; letter-spacing:-.01em;}
+  .card .one{color:var(--ink-soft); font-size:15.5px; margin-bottom:16px; max-width:62ch;}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; border-top:1px solid var(--line-soft); padding-top:16px;}
+  .stat .k{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); font-weight:600;}
+  .stat .v{font-family:"Fraunces",serif; font-size:23px; font-weight:500; line-height:1.1; margin-top:3px; letter-spacing:-.01em;}
+  .stat .v small{font-size:13px; font-family:"Hanken Grotesk"; color:var(--ink-soft); font-weight:500;}
+
+  /* ---------- timeline ---------- */
+  .timeline{margin:14px 0 8px; padding:34px 32px 26px; background:#fffdf8; border:1px solid var(--line); border-radius:6px; box-shadow:var(--shadow);}
+  .track{position:relative; height:148px; margin:6px 14px 4px;}
+  .track .axis{position:absolute; top:90px; left:0; right:0; height:2px; background:var(--line);}
+  .gridtick{position:absolute; top:82px; width:1px; height:16px; background:var(--line);}
+  .gridlabel{position:absolute; top:106px; transform:translateX(-50%); font-size:12px; color:var(--ink-faint); white-space:nowrap; letter-spacing:.02em;}
+  .gridlabel.l0{transform:none;} .gridlabel.l100{transform:translateX(-100%);}
+  .sellband{position:absolute; top:76px; height:30px; background:rgba(168,95,41,.15); border-left:1px dashed var(--clay); border-right:1px dashed var(--clay); border-radius:2px;}
+  .band-bracket{position:absolute; top:48px; height:24px; border:1.5px solid var(--clay); border-bottom:none; border-radius:5px 5px 0 0; opacity:.5;}
+  .band-label{position:absolute; top:22px; transform:translateX(-50%); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--clay-deep); font-weight:700; white-space:nowrap;}
+  .marker{position:absolute; top:83px; width:14px; height:14px; border-radius:50%; transform:translate(-50%,0); border:3px solid #fffdf8; box-shadow:0 0 0 1px rgba(0,0,0,.08); z-index:2;}
+  .marker.A{background:var(--slate);} .marker.B{background:var(--green);}
+  .opt-arrow{position:absolute; top:87px; height:6px; border-radius:3px; background:linear-gradient(90deg,rgba(47,107,76,.5),rgba(47,107,76,0));}
+  .opt-label{position:absolute; top:56px; transform:translateX(-50%); font-size:12px; font-weight:600; color:var(--green-deep); white-space:nowrap;}
+  .tl-legend{display:flex; gap:20px; flex-wrap:wrap; margin-top:18px; font-size:13px; color:var(--ink-soft);}
+  .tl-legend span{display:inline-flex; gap:8px; align-items:center;}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+
+  /* ---------- fork / pivotal ---------- */
+  .fork{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:10px;}
+  .fork .opt{padding:22px 22px; border-radius:6px; border:1px solid var(--line); background:#fffdf8;}
+  .fork .best{border-top:4px solid var(--green);}
+  .fork .base{border-top:4px solid var(--clay);}
+  .fork .q{font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--ink-faint);}
+  .fork .big{font-family:"Fraunces",serif; font-size:34px; font-weight:500; letter-spacing:-.02em; margin:6px 0 2px; line-height:1;}
+  .fork .best .big{color:var(--green-deep);} .fork .base .big{color:var(--clay-deep);}
+  .fork .sub{font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- confidence table ---------- */
+  .conf{width:100%; border-collapse:collapse; margin-top:6px; font-size:15px;}
+  .conf th{text-align:left; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; padding:0 12px 10px 0; border-bottom:1px solid var(--line);}
+  .conf td{padding:13px 12px 13px 0; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+  .conf td:first-child{font-weight:600; width:34%;}
+  .conf td.c{white-space:nowrap; width:18%;}
+  .pip{letter-spacing:2px; font-size:13px;}
+  .pip .on{color:var(--green);} .pip.med .on{color:var(--gold);} .pip.low .on{color:var(--clay);}
+  .pip .off{color:var(--line);}
+
+  /* ---------- pros / cons ---------- */
+  .scen-block{margin-top:8px; padding-top:6px;}
+  .scen-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px;}
+  .scen-head .pin{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;}
+  .scen-A .pin{color:var(--slate-deep);} .scen-B .pin{color:var(--green-deep);} .scen-C .pin{color:var(--clay-deep);}
+  .scen-head h3{font-family:"Fraunces",serif; font-weight:500; font-size:22px; letter-spacing:-.01em;}
+  .pc{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:14px 0 8px;}
+  .pc ul{list-style:none; margin:0; padding:0;}
+  .pc li{position:relative; padding:6px 0 6px 26px; font-size:15px; line-height:1.45; color:var(--ink); border-bottom:1px dotted var(--line-soft);}
+  .pc li:last-child{border-bottom:none;}
+  .pc .for li::before{content:"+"; position:absolute; left:4px; top:5px; color:var(--green); font-weight:700;}
+  .pc .against li::before{content:"\2013"; position:absolute; left:4px; top:5px; color:var(--clay); font-weight:700;}
+  .pc h4{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin:0 0 6px;}
+  .eyes{margin-top:14px; border-top:1px solid var(--line-soft); padding-top:14px; display:grid; gap:10px;}
+  .eye{display:grid; grid-template-columns:128px 1fr; gap:14px; font-size:14.5px;}
+  .eye .who{font-weight:700; color:var(--ink); display:flex; align-items:center; gap:8px;}
+  .eye .who .ini{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;flex:none;}
+  .eye .g .ini{background:var(--clay);} .eye .d .ini{background:var(--slate);} .eye .u .ini{background:var(--green);}
+  .eye p{margin:0; color:var(--ink-soft); max-width:none;}
+
+  /* ---------- assumptions ---------- */
+  .assume{columns:2; column-gap:34px; margin-top:4px;}
+  .assume div{break-inside:avoid; padding:9px 0; border-bottom:1px dotted var(--line-soft); font-size:14.5px; display:flex; justify-content:space-between; gap:12px;}
+  .assume .lab{color:var(--ink-soft);} .assume .val{font-weight:600; white-space:nowrap;}
+
+  /* her preference */
+  .pref{background:linear-gradient(180deg,var(--paper-2),#f3ecdd); border-radius:8px; padding:34px 34px; border:1px solid var(--line);}
+  .pref h2{margin-top:0;}
+  .pref p{font-size:18px; line-height:1.55; color:var(--ink);}
+  .pref .sig{font-family:"Fraunces",serif; font-style:italic; font-size:21px; color:var(--green-deep); margin-top:18px;}
+
+  footer{padding:40px 0 0; color:var(--ink-faint); font-size:13px; line-height:1.55;}
+  footer .rule{height:1px;background:var(--line);margin-bottom:22px;}
+  a{color:var(--green-deep);}
+
+  /* entrance */
+  .reveal{opacity:0; transform:translateY(14px); animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1; transform:none;}}
+
+  @media (max-width:680px){
+    .stats{grid-template-columns:1fr 1fr;} .fork{grid-template-columns:1fr;}
+    .pc{grid-template-columns:1fr;} .assume{columns:1;} .eye{grid-template-columns:1fr;}
+    .eye .who{margin-bottom:-4px;}
+    .conf td:first-child{width:auto;}
+  }
+  @media print{
+    body{background:#fff; font-size:11.5pt;} body::before{display:none;}
+    .wrap{max-width:none;padding:0 8px;} section{padding:20px 0; break-inside:avoid;}
+    .card,.timeline,.fork .opt{box-shadow:none;} .reveal{animation:none;opacity:1;transform:none;}
+    header.mast{padding-top:8px;}
+  }
+
+  /* download card */
+  .dlcard{display:flex; align-items:center; gap:18px; margin:26px 0 4px; padding:20px 24px; background:linear-gradient(180deg,#fffdf8,#fbf6ec); border:1px solid var(--line); border-left:3px solid var(--green); border-radius:8px; box-shadow:var(--shadow);}
+  .dl-ic{flex:none; width:46px; height:46px; border-radius:10px; background:rgba(47,107,76,.10); display:flex; align-items:center; justify-content:center; color:var(--green-deep);}
+  .dl-ic svg{width:24px;height:24px;}
+  .dl-tx{flex:1 1 auto;}
+  .dl-h{font-family:"Fraunces",serif; font-weight:600; font-size:18px; color:var(--ink); letter-spacing:-.01em;}
+  .dl-s{font-size:14px; color:var(--ink-soft); line-height:1.45; margin-top:2px; max-width:56ch;}
+  .dl-btn{flex:none; cursor:pointer; font-family:"Hanken Grotesk",sans-serif; font-weight:600; font-size:14.5px; color:#fff; background:var(--green-deep); border:none; border-radius:7px; padding:11px 18px; letter-spacing:.01em; transition:background .15s, transform .15s; white-space:nowrap;}
+  .dl-btn:hover{background:#1c4030; transform:translateY(-1px);}
+  .dl-btn .dl-sz{opacity:.7; font-weight:500; margin-left:5px;}
+  .dl-foot{color:var(--green-deep); font-weight:600; cursor:pointer; text-decoration:underline; text-underline-offset:2px; background:none; border:none; font:inherit; padding:0;}
+  @media (max-width:680px){ .dlcard{flex-direction:column; align-items:flex-start; gap:12px;} .dl-btn{width:100%;} }
+  @media print{ .dlcard{display:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast reveal">
+    <div class="eyebrow">Family Care Decision · Private Memo</div>
+    <h1>Coming Home <em>at One Hundred</em></h1>
+    <p class="dek">A plain-language reading of the numbers behind one question: should she return to her own house, stay in care, or try home and keep a fallback?</p>
+    <div class="meta">
+      <span><b>Prepared</b> June 2026</span>
+      <span><b>Subject</b> Grandmother Ritchie, age 100</span>
+      <span><b>Decision by</b> her two sons</span>
+      <span><b>Source</b> companion financial model</span>
+    </div>
+  </header>
+
+  <div class="dlcard reveal" style="animation-delay:.04s">
+    <div class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></div>
+    <div class="dl-tx">
+      <div class="dl-h">The full financial model</div>
+      <div class="dl-s">Latest Excel workbook. Every scenario, assumption, and the month-by-month runway. Open it for your own review, or forward it on.</div>
+    </div>
+    <a class="dl-btn" href="https://drive.google.com/file/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Download Excel<span class="dl-sz">.xlsx</span></a>
+  </div>
+
+
+  <!-- WHAT STANDS OUT -->
+  <section class="reveal" style="animation-delay:.06s">
+    <div class="sec-label">What stands out</div>
+    <h2>Three paths, one destination.</h2>
+    <p class="lead">Open the model cold and the first surprise is how little the money separates the choices. <span class="hl">In every realistic version of events, the house is sold within roughly 16–18 months to keep paying for her care</span>. Across three years the three paths land within about $10,000 of one another.</p>
+    <p>That reframes the whole decision. This is <strong>not primarily a financial question</strong>. The dollars come out close enough that they shouldn't be the deciding vote. What differs between the paths is the <strong>level of care she can safely receive</strong>, the <strong>coordination burden on family</strong>, and <strong>where she spends what may be her last years</strong>.</p>
+    <div class="insight">
+      One question moves the numbers more than every other input combined: <b>can she manage her own insulin?</b> If she can manage it, or a trained family member can, living at home costs less than her monthly income, and her savings are preserved. If she needs a paid, medication-certified aide, home costs about four times as much and her cash runs out in little over a year.
+    </div>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section class="reveal" style="animation-delay:.06s">
+    <div class="sec-label">The three scenarios</div>
+    <h2>What each road looks like.</h2>
+    <div class="cards">
+
+      <div class="card card-A">
+        <div class="bar"></div>
+        <div class="body">
+          <span class="tag">Scenario A</span>
+          <h3 class="name">Stay in the care facility</h3>
+          <p class="one">She remains where she is. Round-the-clock staff, meals, and medication, all handled. But it is the costliest path each month, and it rises every year.</p>
+          <div class="stats">
+            <div class="stat"><div class="k">Cost / month (Yr 1)</div><div class="v">~$6,500 <small>+5%/yr</small></div></div>
+            <div class="stat"><div class="k">Cash lasts</div><div class="v">~18 mo</div></div>
+            <div class="stat"><div class="k">3-year outlay</div><div class="v">~$258k</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-B">
+        <div class="bar"></div>
+        <div class="body">
+          <span class="tag">Scenario B</span>
+          <h3 class="name">Move home, and it works</h3>
+          <p class="one">She returns to her house with cameras, a medical alert, delivered meals, and in-home help. Cheaper monthly than the facility, though the cost swings hard on how much paid care she needs.</p>
+          <div class="stats">
+            <div class="stat"><div class="k">Cost / month (Yr 1)</div><div class="v">~$5,900 <small>base care</small></div></div>
+            <div class="stat"><div class="k">Cash lasts</div><div class="v">~15 mo</div></div>
+            <div class="stat"><div class="k">Upfront</div><div class="v">~$24k</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-C">
+        <div class="bar"></div>
+        <div class="body">
+          <span class="tag">Scenario C</span>
+          <h3 class="name">Move home, then return to care</h3>
+          <p class="one">She goes home, but her needs outpace what home can safely provide, so after a stretch she moves back. The "what if it doesn't work" path, and far less costly than it feels.</p>
+          <div class="stats">
+            <div class="stat"><div class="k">Net extra cost</div><div class="v">~$6,700</div></div>
+            <div class="stat"><div class="k">House sale covers</div><div class="v">the return</div></div>
+            <div class="stat"><div class="k">Leftover after</div><div class="v">~$140k</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CROSSOVER TIMELINE -->
+  <section class="reveal">
+    <div class="sec-label">The crossover point</div>
+    <h2>When the house has to be sold.</h2>
+    <p>Her liquid savings, about $90,000 in a money market earning ~2%, are the clock. Once they run dry, the house must be sold to keep paying, <strong>and that moment arrives at roughly the same time whether she stays or moves.</strong> Selling the house is not a feature of one path; it's the shared turning point of nearly all of them.</p>
+
+    <div class="timeline">
+      <div class="track" id="track">
+        <div class="axis"></div>
+        <!-- year ticks at 0,12,24,36 months -->
+        <div class="gridtick" style="left:0%"></div><div class="gridlabel l0" style="left:0%">Aug 2026 · move in</div>
+        <div class="gridtick" style="left:33.3%"></div><div class="gridlabel" style="left:33.3%">Aug 2027</div>
+        <div class="gridtick" style="left:66.6%"></div><div class="gridlabel" style="left:66.6%">Aug 2028</div>
+        <div class="gridtick" style="left:100%"></div><div class="gridlabel l100" style="left:100%">Aug 2029</div>
+        <!-- optimistic path runs the full length -->
+        <div class="opt-arrow" style="left:34%; right:0;"></div>
+        <div class="opt-label" style="left:72%">Optimistic · funds preserved &rarr;</div>
+        <!-- house-sold window: months ~15-18 => 41.6%-50% -->
+        <div class="band-label" style="left:45.8%">House sold here</div>
+        <div class="band-bracket" style="left:41.6%; width:8.4%;"></div>
+        <div class="sellband" style="left:41.6%; width:8.4%;"></div>
+        <!-- scenario end-points (identity in legend below) -->
+        <div class="marker B" style="left:41.6%"></div>
+        <div class="marker A" style="left:50%"></div>
+      </div>
+      <div class="tl-legend">
+        <span><i class="dot" style="background:var(--green)"></i> <b style="color:var(--green-deep)">B</b>: money out ~15 months (base care)</span>
+        <span><i class="dot" style="background:var(--slate)"></i> <b style="color:var(--slate-deep)">A</b>: money out ~18 months</span>
+        <span><i class="dot" style="background:rgba(168,95,41,.55)"></i> the house is sold somewhere in this window</span>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:18px">The exception is the optimistic case (below): if home costs stay under her income, the savings are never drawn down and the house may not need to be sold at all, or only years later.</p>
+  </section>
+
+  <!-- PIVOTAL FORK -->
+  <section class="reveal">
+    <div class="sec-label">The variable that decides it</div>
+    <h2>The insulin question decides almost everything.</h2>
+    <p>North Carolina home aides generally cannot give injections, so insulin twice a day means either a medication-certified aide (around $50/hour, with agency visit minimums), or she does it herself. Because she is sharp, self-administration is plausible, and it changes everything downstream.</p>
+    <div class="fork">
+      <div class="opt best">
+        <div class="q">If she self-injects (+ family helps)</div>
+        <div class="big">~$1,540<span style="font-size:16px">/mo</span></div>
+        <div class="sub">Below her ~$1,700 income. Savings preserved, house kept, funds last indefinitely.</div>
+      </div>
+      <div class="opt base">
+        <div class="q">If she needs paid medical care</div>
+        <div class="big">~$5,900<span style="font-size:16px">/mo</span></div>
+        <div class="sub">On par with the facility. Liquid savings gone in ~15 months; house sold.</div>
+      </div>
+    </div>
+    <p style="margin-top:22px">Everything else in the model (facility inflation, food, monitoring, even the home repairs) is a rounding error next to this one fork. <strong>Resolving who handles her insulin is the single most valuable thing the family can do before deciding.</strong></p>
+  </section>
+
+  <!-- SENSITIVITY & CONFIDENCE -->
+  <section class="reveal">
+    <div class="sec-label">Sensitivity &amp; confidence</div>
+    <h2>How sure are these numbers?</h2>
+    <p>The honest summary: <strong>high confidence in the relative picture</strong> (the paths cost about the same and the house sells around 16–18 months) and <strong>lower confidence in the absolute monthly figures</strong>, which ride almost entirely on the care question. Here is where each input sits, and which way it could move things.</p>
+    <table class="conf">
+      <thead><tr><th>Input</th><th class="c">Confidence</th><th>If it moves…</th></tr></thead>
+      <tbody>
+        <tr><td>Facility cost ($6,000) &amp; her income ($1,700)</td><td class="c"><span class="pip"><span class="on">●●●</span></span></td><td>Known figures. Little risk.</td></tr>
+        <tr><td>Food, monitoring, medical alert</td><td class="c"><span class="pip"><span class="on">●●●</span></span></td><td>Researched, stable. Minor in the total.</td></tr>
+        <tr><td>Sale-enabling repairs (~$12.6k)</td><td class="c"><span class="pip med"><span class="on">●●</span><span class="off">●</span></span></td><td>Plumbing-to-city is a real-world estimate; could rise. Paid in every path regardless.</td></tr>
+        <tr><td>Home monthly cost</td><td class="c"><span class="pip med"><span class="on">●●</span><span class="off">●</span></span></td><td>Swings from ~$1,540 to ~$5,900 on care hours. The dominant uncertainty.</td></tr>
+        <tr><td>House value / sale proceeds (~$232k net)</td><td class="c"><span class="pip med"><span class="on">●●</span><span class="off">●</span></span></td><td>Lower value = the sale funds fewer months; spend-down arrives sooner.</td></tr>
+        <tr><td>Caregiver hours &amp; rate · insulin self-care</td><td class="c"><span class="pip low"><span class="on">●</span><span class="off">●●</span></span></td><td>The biggest lever. Best case preserves her savings; worst case beats the facility on cost.</td></tr>
+        <tr><td>Care level if she returns (Scenario C)</td><td class="c"><span class="pip low"><span class="on">●</span><span class="off">●●</span></span></td><td>A step up to skilled/memory care makes the return materially pricier.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px"><strong>How it could shake out, in three strokes.</strong> <span class="muted">Best:</span> she self-injects, family shares the day, and home runs under her income and the house is never forced to sell. <span class="muted">Base:</span> a few hours of paid care daily, and home ≈ facility, house sells in ~15 months. <span class="muted">Hard:</span> she needs near-constant or skilled care, so home exceeds the facility, money runs out faster, and the case for staying (or returning) strengthens. Faster facility inflation (7–8%) only widens home's long-run advantage; a lower house value pulls every spend-down date earlier.</p>
+  </section>
+
+  <!-- PROS / CONS BY SCENARIO + PERSPECTIVE -->
+  <section class="reveal">
+    <div class="sec-label">For &amp; against · through three sets of eyes</div>
+    <h2>What pulls the decision each way.</h2>
+    <p>The same facts read differently depending on who's weighing them. For each path: the case for, the case against, and how it might land for <strong>her</strong>, for <strong>Dad</strong>, and for <strong>his brother</strong>.</p>
+
+    <!-- A -->
+    <div class="scen-block scen-A">
+      <div class="scen-head"><span class="pin">Scenario A</span><h3>Stay in care</h3></div>
+      <div class="pc">
+        <div class="for"><h4>The case for</h4><ul>
+          <li>24/7 staff: the highest level of supervision and the smallest fall-alone risk.</li>
+          <li>Insulin and medications handled by professionals, no family scramble.</li>
+          <li>No repair project under an August deadline; no setup cost or logistics.</li>
+          <li>Built-in social contact and routine.</li>
+        </ul></div>
+        <div class="against"><h4>The case against</h4><ul>
+          <li>Highest monthly cost, and it climbs ~5% a year.</li>
+          <li>It is the one thing she has said she does not want.</li>
+          <li>The house is still sold within ~18 months anyway; staying doesn't save it.</li>
+          <li>Loss of home and independence carries its own quiet cost.</li>
+        </ul></div>
+      </div>
+      <div class="eyes">
+        <div class="eye"><span class="who g"><span class="ini">G</span>Grandmother</span><p>Hardest to accept: it's the opposite of her stated wish.</p></div>
+        <div class="eye"><span class="who d"><span class="ini">D</span>Dad</span><p>Peace of mind on safety, but the guilt of overriding her, and the rising bill.</p></div>
+        <div class="eye"><span class="who u"><span class="ini">U</span>His brother</span><p>Lowest day-to-day burden, attractive if he can't take on coordination.</p></div>
+      </div>
+    </div>
+
+    <!-- B -->
+    <div class="scen-block scen-B" style="margin-top:30px">
+      <div class="scen-head"><span class="pin">Scenario B</span><h3>Move home, and it works</h3></div>
+      <div class="pc">
+        <div class="for"><h4>The case for</h4><ul>
+          <li>It honors what she wants: her own home, her last years.</li>
+          <li>Cheaper per month than the facility, and the gap grows as the facility inflates.</li>
+          <li>Cameras, alert, and delivered meals build a real safety net the family can watch.</li>
+          <li>If she self-injects, it's by far the cheapest path, with savings preserved.</li>
+        </ul></div>
+        <div class="against"><h4>The case against</h4><ul>
+          <li>Upfront cost and a repair project racing an Aug 1 date; the plumbing is the risk.</li>
+          <li>Care coordination falls on the family, week after week.</li>
+          <li>A safety gap vs. 24/7 staffing, especially overnight.</li>
+          <li>If her needs rise, it may not hold, which becomes Scenario C.</li>
+        </ul></div>
+      </div>
+      <div class="eyes">
+        <div class="eye"><span class="who g"><span class="ini">G</span>Grandmother</span><p>This is the answer she's hoping for: dignity, familiarity, home.</p></div>
+        <div class="eye"><span class="who d"><span class="ini">D</span>Dad</span><p>Most rewarding and most demanding; leans yes if the insulin plan is solid.</p></div>
+        <div class="eye"><span class="who u"><span class="ini">U</span>His brother</span><p>Supportive if the load is shared and the safety net is genuinely in place.</p></div>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="scen-block scen-C" style="margin-top:30px">
+      <div class="scen-head"><span class="pin">Scenario C</span><h3>Home first, then return to care</h3></div>
+      <div class="pc">
+        <div class="for"><h4>The case for</h4><ul>
+          <li>She gets her wish: months, maybe a year or more, at home.</li>
+          <li>The net extra cost of trying is only ~$6,700, not a financial gamble.</li>
+          <li>The house sale funds the return with ~$140k to spare.</li>
+          <li>You test the preferred option instead of foreclosing it out of caution.</li>
+        </ul></div>
+        <div class="against"><h4>The case against</h4><ul>
+          <li>Two moves, disruptive and tiring for a 100-year-old.</li>
+          <li>Some setup money (ramp, alert, moving) isn't recovered.</li>
+          <li>A re-entry deposit, plus the risk a bed isn't available when needed.</li>
+          <li>If she returns needing higher-level care, the second chapter costs more.</li>
+        </ul></div>
+      </div>
+      <div class="eyes">
+        <div class="eye"><span class="who g"><span class="ini">G</span>Grandmother</span><p>Time at home now, though leaving it a second time would be hard.</p></div>
+        <div class="eye"><span class="who d"><span class="ini">D</span>Dad</span><p>The "try it, with a safety net" middle path, easiest to feel at peace with.</p></div>
+        <div class="eye"><span class="who u"><span class="ini">U</span>His brother</span><p>Reasonable if a facility relationship is kept warm in advance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSUMPTIONS -->
+  <section class="reveal">
+    <div class="sec-label">Assumptions behind the figures</div>
+    <h2>What the numbers rest on.</h2>
+    <div class="assume">
+      <div><span class="lab">Liquid savings (money market)</span><span class="val">$90,000 · 2%</span></div>
+      <div><span class="lab">Social Security income</span><span class="val">$1,700/mo</span></div>
+      <div><span class="lab">Facility cost (Year 1)</span><span class="val">$6,000/mo</span></div>
+      <div><span class="lab">Facility inflation</span><span class="val">5%/yr</span></div>
+      <div><span class="lab">Property tax + insurance</span><span class="val">$500/mo</span></div>
+      <div><span class="lab">Home care (base case)</span><span class="val">~3 hrs/day</span></div>
+      <div><span class="lab">Skilled (insulin) rate</span><span class="val">$50/hr</span></div>
+      <div><span class="lab">Personal care rate</span><span class="val">$30/hr</span></div>
+      <div><span class="lab">Sale-enabling repairs</span><span class="val">~$12,650</span></div>
+      <div><span class="lab">Accessibility upgrades</span><span class="val">~$9,545</span></div>
+      <div><span class="lab">Home value (estimate)</span><span class="val">$250,000</span></div>
+      <div><span class="lab">Planning horizon</span><span class="val">36 months</span></div>
+    </div>
+    <p class="muted" style="margin-top:20px">Repairs (plumbing, roof) are counted in <em>every</em> scenario, since the house must be made sound to live in or to sell; they lower the overall picture but don't favor a choice. Figures are planning estimates from the companion spreadsheet, not quotes; other programs (PACE, NC Medicaid, VA, and Medicare Advantage benefits) could reduce costs further and are listed in the model's Resources tab.</p>
+  </section>
+
+  <!-- HER PREFERENCE -->
+  <section class="reveal" style="border-bottom:none">
+    <div class="pref">
+      <div class="sec-label" style="color:var(--green-deep)">The vote that isn't on the spreadsheet</div>
+      <h2>Her own wish.</h2>
+      <p>A model can price every path; it cannot weigh what it means to a woman of a hundred to sleep in her own bed, in her own house, for whatever time remains. That preference is not a soft footnote. It is arguably the strongest argument in the room, <strong>because the analysis removes the usual reason to deny it.</strong></p>
+      <p>Going home is not the reckless or extravagant option. It is cost-competitive with staying, and in the best case it is the cheapest path of all. The counterweight is not money. It is whether she can be kept <strong>safe</strong> at home, which comes back to the insulin and the family's capacity to be present.</p>
+      <p class="sig">If those can be answered, the numbers give the family permission to say yes.</p>
+    </div>
+  </section>
+
+  <footer class="reveal">
+    <div class="rule"></div>
+    <p><strong>About this memo.</strong> Prepared June 2026 to support a family decision. All dollar figures are planning estimates drawn from the companion financial model and should be confirmed with providers, her insurance plan, and a contractor before any commitment. This document is not financial, legal, or medical advice. The most decision-relevant unknowns (how much paid care she needs and whether she can self-administer insulin) should be resolved first, as they move the outcome more than any other factor.</p>
+    <p style="margin-top:16px"><a class="dl-foot" href="https://drive.google.com/file/d/1_DScuNRpWuRaqkD04zVEUe_B-eGn6q3G/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none">Download the Excel model (.xlsx)</a>. The source of every figure above.</p>
+  </footer>
+
+</div>
+</body>
+</html>
