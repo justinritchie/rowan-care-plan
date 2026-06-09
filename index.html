@@ -164,6 +164,31 @@
     .filebar{flex-direction:column; align-items:flex-start; gap:8px;}
     .cta{flex-direction:column; align-items:flex-start;}
   }
+  /* 03 insulin toolkit */
+  .kit{margin-top:22px; background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:24px; box-shadow:var(--shadow);}
+  .kit .kh{font-family:var(--sans); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:7px;}
+  .kit .ki{font-family:var(--serif); color:var(--soft); font-size:17px; line-height:1.5; margin:0 0 18px;}
+  .kittable{width:100%; border-collapse:collapse; font-family:var(--sans);}
+  .kittable th{text-align:left; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:700; padding:0 12px 9px 0; border-bottom:1px solid var(--line);}
+  .kittable th.r,.kittable td.r{text-align:right; padding-right:0; white-space:nowrap;}
+  .kittable td{vertical-align:top; padding:13px 12px 13px 0; border-bottom:1px solid var(--line-soft); font-size:14.5px; line-height:1.45; color:var(--soft);}
+  .kittable .tool{color:var(--ink); font-weight:700; font-size:15px;}
+  .kittable .tool small{display:block; color:var(--faint); font-weight:500; font-size:12px; margin-top:2px; letter-spacing:.01em;}
+  .kittable .cost{color:var(--ink); font-variant-numeric:tabular-nums; font-weight:700; font-size:15px;}
+  .kittable tr.tot td{border-bottom:none; border-top:1px solid var(--line); padding-top:15px; color:var(--ink);}
+  .kittable tr.tot .cost{color:var(--gold); font-size:17px;}
+  .kit .setup{font-family:var(--serif); font-size:14.5px; color:var(--faint); margin:13px 0 0; line-height:1.55;}
+  .subs{margin-top:18px; padding:18px 20px; border:1px dashed var(--line); border-radius:5px; background:rgba(224,172,85,.05);}
+  .subs p{font-family:var(--serif); font-size:16.5px; line-height:1.55; color:var(--soft); margin:0 0 11px;}
+  .subs p:last-child{margin-bottom:0;}
+  .subs b{color:var(--ink); font-weight:600;}
+  .subs .em{color:var(--gold); font-weight:600;}
+  @media(max-width:560px){
+    .kit{padding:18px;}
+    .kittable td,.kittable th{font-size:13px;}
+    .kittable .tool,.kittable .cost{font-size:13.5px;}
+    .kittable td{padding:11px 8px 11px 0;}
+  }
 </style>
 </head>
 <body>
@@ -256,6 +281,44 @@
         <li><strong>The insulin</strong> (the biggest swing): twice-daily injections are skilled care, not something to put on family. A paid skilled aide (about $50/hour) makes home cost about the same as assisted living; if it can be simplified or self-administered, the rest is mostly personal care (about $30/hour) and home is the cheapest of the three by far.</li>
         <li><strong>Do this first:</strong> a concrete care plan, real hours, who provides them, what they cost, and backup coverage. Resolve it and the financial choice mostly answers itself.</li>
       </ul>
+    </div>
+    <div class="kit rise d2">
+      <div class="kh">Tangible ways to make the insulin safe at home</div>
+      <p class="ki">Most of the worry about home is really one worry: the insulin. Here is concrete equipment that addresses it, with real prices. At 100 she is on Medicare, which covers most of it.</p>
+      <table class="kittable">
+        <thead>
+          <tr><th>Tool</th><th>What it does</th><th class="r">Est. cost / month</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tool">Continuous glucose monitor<small>FreeStyle Libre 3 or Dexcom G7</small></td>
+            <td>Reads her sugar all day and alarms on a low, the safety net against taking too much. Family can watch the numbers from a phone.</td>
+            <td class="r cost">$0&ndash;50</td>
+          </tr>
+          <tr>
+            <td class="tool">Prefilled insulin pen<small>with a simplified once-daily dose</small></td>
+            <td>Removes the measuring that caused the over-injecting. Dial the units and inject, no syringe to read.</td>
+            <td class="r cost">~$35</td>
+          </tr>
+          <tr>
+            <td class="tool">Smart pill dispenser<small>Hero or MedMinder</small></td>
+            <td>Locks her other medicines, releases the right dose at the right time, and texts family if one is missed.</td>
+            <td class="r cost">$30&ndash;50</td>
+          </tr>
+          <tr class="tot">
+            <td class="tool">The whole safety layer</td>
+            <td>Monitoring, simplified insulin, and managed pills, together.</td>
+            <td class="r cost">~$65&ndash;135</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="setup">One-time setup runs about $0 to $200: the monitor reads on a phone she already has, and the dispenser is a subscription. Buying a dispenser outright instead is about $1,000 to $2,000. Medicare covers the monitor and caps the insulin, so the dispenser is the main out-of-pocket piece.</p>
+      <div class="subs">
+        <p><b>What this swaps out.</b> The costly part of home care was a skilled, insulin-trained aide, about $50/hour, twice a day, coming mainly to give the insulin. This kit can replace that skilled visit. The dose is one she gives herself, or one a regular aide who is already there for showers simply watches her give, with the monitor as the backstop. That trims roughly <span class="em">$1,500 to $3,000 a month</span> off the home plan.</p>
+        <p><b>What stays.</b> She still needs hands-on help with bathing, dressing, moving safely, and meals. That does not change, and it is the same in any plan that keeps her at home.</p>
+        <p><b>The one hinge.</b> It works if she can press the plunger on a pre-set pen with someone watching. If she truly cannot, the insulin goes back to family or a nurse, so a doctor confirming a simplified once-daily routine is step one.</p>
+        <p><b>Why it matters.</b> Cutting that skilled-nursing line is what keeps the monthly burn low enough to leave the house unsold. In the timeline below, the savings otherwise run out around late 2027. A setup like this, if it works for her, could push that out by years, or take selling off the table. Realistically, it is the path that makes moving home possible at all.</p>
+      </div>
     </div>
   </section>
 
